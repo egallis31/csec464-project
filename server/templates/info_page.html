@@ -39,6 +39,8 @@
     <div class="container homepage-container">
         {% if message is defined %}
         <blockquote>{{message}}</blockquote>
+        {% elif json is defined %}
+        <div id="tree"></div>
         {% else %}
         <blockquote>No message</blockquote>
         {% endif %}
@@ -51,6 +53,18 @@
         </div>
 
     </footer>
+    
+    {% if json is defined %}
+    <script>
+        $(function() {
+    var mytree = JSON.parse('{{ json|tojson }}');
+
+    $('#tree').treeview({
+        data: mytree
+    });
+    });
+    </script>
+    {% endif %}
 </body>
 
 </html>

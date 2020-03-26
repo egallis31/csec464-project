@@ -55,8 +55,7 @@ def api_home():
     try:
         t = request.args.get("type")
         if t == "page": 
-            data = json.dumps(api_info.routes, sort_keys = True, indent = 4, separators = (',', ': ', '[ ', '] '))
-            return render_template('info_page.html', message=data, c_name=conf.company_name)
+            return render_template('info_page.html', json=api_info.routes, c_name=conf.company_name)
     except:
         pass
     return jsonify(api_info.routes)
