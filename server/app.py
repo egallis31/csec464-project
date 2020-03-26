@@ -55,7 +55,7 @@ def api_home():
     try:
         t = request.args.get("type")
         if t == "page": 
-            return render_template('info_page.html', message=jsonify(api_info.routes))
+            return render_template('info_page.html', message=jsonify(api_info.routes), c_name=conf.company_name)
     except:
         pass
     return jsonify(api_info.routes)
@@ -65,7 +65,7 @@ def api_test_redis():
     try:
         t = request.args.get("type")
         if t == "page": 
-            return render_template('info_page.html', message=redis_utils.test_redis())
+            return render_template('info_page.html', message=redis_utils.test_redis(), c_name=conf.company_name)
     except:
         pass
     return redis_utils.test_redis()
