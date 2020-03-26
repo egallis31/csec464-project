@@ -52,10 +52,22 @@ def audit():
 
 @app.route('/api', methods=["GET"])
 def api_home():
+    try:
+        t = request.args.get("type")
+        if t == "page": 
+            return render_template('info_page.html', message=jsonify(api_info.routes))
+    except:
+        pass
     return jsonify(api_info.routes)
 
 @app.route('/api/test-redis', methods=["GET"])
 def api_test_redis():
+    try:
+        t = request.args.get("type")
+        if t == "page": 
+            return render_template('info_page.html', message=redis_utils.test_redis())
+    except:
+        pass
     return redis_utils.test_redis()
 
 # RECIEVE - JSON OUTPUT FROM SCRIPTS

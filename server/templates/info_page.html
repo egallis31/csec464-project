@@ -27,17 +27,21 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/api?type=page">API Routes</a>
+                    <a class="nav-link" href="/api">API Routes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/api/test-redis?type=page">Test Redis</a>
+                    <a class="nav-link" href="/api/test-redis">Test Redis</a>
                 </li>
             </ul>
         </div>
     </nav>
     <br>
     <div class="container homepage-container">
-
+        {% if message is defined %}
+        <blockquote>{{message}}</blockquote>
+        {% else %}
+        <blockquote>No message</blockquote>
+        {% endif %}
     </div>
 
     <footer class="page-footer font-small cyan darken-3">
