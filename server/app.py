@@ -86,7 +86,8 @@ def login_page():
     if request.method == "POST":
         pass
         # login functionality - use standard lib when building
-        return redirect('/')
+        data = {"username": request.form['username'], "password": request.form['password']}
+        return jsonify(data)
     else:
         return render_template('login.html', c_name=conf.company_name)
 
