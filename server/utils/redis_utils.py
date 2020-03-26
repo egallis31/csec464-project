@@ -9,4 +9,7 @@ r = redis.Redis(
     password=conf.redis_pass)
 
 def test_redis():
-    return str(r.ping())
+    if r.ping():
+        return "Successful Redis Connection"
+    else:
+        return "Failed Redis Connection"
