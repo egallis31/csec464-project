@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{c_name}} Forensics</title>
+    <link rel="shortcut icon" href="/static/img/favicon.ico" />
     <!--BOOTSTRAP IMPORTS-->
     <script src="/static/js/jquery-3.3.1.slim.min.js"></script>
     <script src="/static/js/popper.min.js"></script>
@@ -51,7 +52,7 @@
     {% if json is defined %}
     <script>
         $(function() {
-    var mytree = JSON.parse('{{ json|tojson }}');
+    var mytree = '{{ json|tojson }}';
 
     $('#tree').treeview({
         data: mytree
