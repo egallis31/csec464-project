@@ -59,7 +59,7 @@
     {% if json is defined %}
     <script>
         $(function() {
-    var mytree = JSON.parse('{{ json }}');
+    var mytree = JSON.parse('{{ json|tojson }}');
 
     $('#tree').treeview({
         data: mytree
