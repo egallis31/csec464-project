@@ -49,13 +49,13 @@ def audit():
     except:
         return render_template('audit.html', c_name=conf.company_name)
 ###########################################################################################
-
+########### API ##########
 @app.route('/api', methods=["GET"])
 def api_home():
     try:
         t = request.args.get("type")
         if t == "page": 
-            return render_template('info_page.html', json=json.dumps(api_info.test_routes, indent=4), c_name=conf.company_name)
+            return render_template('info_page.html', json=json.dumps(api_info.routes, indent=4), c_name=conf.company_name)
     except:
         pass
     return jsonify(api_info.routes)
@@ -75,9 +75,22 @@ def api_test_redis():
 def api_recv():
     return
 
-@app.route('/')
+###### END API ##############
+###### USER PAGES ###########
+@app.route('/', methods=["GET"])
 def index():
     return render_template('index.html', c_name=conf.company_name)
 
+@app.route('/login', methods=["POST", "GET"])
+def login_page():
+    if request.method == "POST":
+        pass
+        # login functionality - use standard lib when building
+        return redirect('/')
+    else:
+        return render_template('login.html', c_name=conf.company_name)
+
+####### END USER PAGES #######
+########## MAIN ##############
 if __name__ == '__main__':
     app.run(host='0.0.0.0', threaded=True, debug=False, port=80)
