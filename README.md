@@ -19,3 +19,15 @@ Server
 Redis
 
 * `REDIS_PASSWORD`
+
+## TODO
+
+### Server
+
+* Add Flask-Login/Flask-Security Login functionality
+* Pipe Client Data to Redis DB
+* Work with Data
+
+### Client
+
+* Create Scripts for sending data back in JSON format
