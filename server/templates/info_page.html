@@ -10,9 +10,7 @@
     <script src="/static/js/jquery-3.3.1.slim.min.js"></script>
     <script src="/static/js/popper.min.js"></script>
     <link rel="stylesheet" href="/static/css/bootstrap.min.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-treeview/1.2.0/bootstrap-treeview.min.css" rel="stylesheet"/>
     <script src="/static/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-treeview/1.2.0/bootstrap-treeview.min.js"></script>
     <script>
         $(function () { $('[data-toggle="popover"]').popover() })
     </script>
@@ -43,23 +41,13 @@
         {% if message is defined %}
         <blockquote>{{message}}</blockquote>
         {% elif json is defined %}
-        <div id="tree"></div>
+
+        <pre>{{json}}</pre>
+
         {% else %}
         <blockquote>No message</blockquote>
         {% endif %}
     </div>
-
-    {% if json is defined %}
-    <script>
-        $(function() {
-    var mytree = [{{ json|tojson }}];
-
-    $('#tree').treeview({
-        data: mytree
-    });
-    });
-    </script>
-    {% endif %}
 
     <footer class="page-footer font-small cyan darken-3">
 
