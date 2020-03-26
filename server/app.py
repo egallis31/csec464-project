@@ -81,11 +81,12 @@ def api_recv():
 def index():
     return render_template('index.html', c_name=conf.company_name)
 
+## Login Page + Functions ##
 @app.route('/login', methods=["POST", "GET"])
 def login_page():
     if request.method == "POST":
         pass
-        # login functionality - use standard lib when building
+        # test login page functionality - use standard lib when building
         data = {"username": request.form['username'], "password": request.form['password']}
         return jsonify(data)
     else:
