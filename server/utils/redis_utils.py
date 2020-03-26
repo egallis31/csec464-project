@@ -9,4 +9,4 @@ r = redis.Redis(
     password=conf.redis_pass)
 
 def test_redis():
-    return r.ping()
+    return str(r.ping())
