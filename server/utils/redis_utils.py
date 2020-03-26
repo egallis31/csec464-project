@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # REDIS UTILS
 import redis
-import conf
+import utils.conf as conf
 
 r = redis.Redis(
     host=conf.redis_host,
