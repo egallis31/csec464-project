@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  grr-server:
+    container_name: grr-server
+    image: grrdocker/grr
+    environment: 
+      - EXTERNAL_HOSTNAME=localhost
+      - ADMIN_PASSWORD=password  
+    ports:
+      - "80:8000"
+      - "8080:8080"
