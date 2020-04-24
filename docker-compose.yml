@@ -8,5 +8,7 @@ services:
       - EXTERNAL_HOSTNAME=localhost
       - ADMIN_PASSWORD=password  
     ports:
-      - "80:8000"
-      - "8080:8080"
+      - "0.0.0.0:80:8000"
+      - "0.0.0.0:8080:8080"
+    volumes: 
+      - ./grr-server/grr-server.yaml:/usr/share/grr-server/install_data/etc/grr-server.yaml
