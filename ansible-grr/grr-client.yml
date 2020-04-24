@@ -1,0 +1,4 @@
+- name: Setup GRR Demo
+  hosts: all
+  roles:
+    - grr-client-install
