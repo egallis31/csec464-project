@@ -19,6 +19,8 @@
   uri:
     url: "http://127.0.0.1:8080/"
     status_code: 200
+    user: admin
+    password: password
   register: result
   until: result.status == 200
   retries: 60
