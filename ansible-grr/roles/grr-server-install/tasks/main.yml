@@ -1,0 +1,4 @@
+---
+- name: GRR Server Install 
+  include: grr-server.yml
+  when: "'server' in group_names"

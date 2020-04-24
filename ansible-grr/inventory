@@ -5,7 +5,12 @@ localhost ansible_connection=local
 localhost ansible_connection=local
 
 [client]
+# LINUX ONLY
 localhost ansible_connection=local
 
 [all:vars]
 ansible_python_interpreter=/usr/bin/python3
+
+#grr-server
+grr_location=/root
+#grr-client

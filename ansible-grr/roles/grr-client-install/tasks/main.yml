@@ -1,0 +1,4 @@
+---
+- name: GRR Server Install 
+    include: grr-client.yml
+    when: "'client' in group_names"
