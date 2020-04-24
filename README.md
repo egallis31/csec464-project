@@ -7,8 +7,9 @@
 
 ## GRR Incident Response Demo
 
-* Demo deployment instructions in `ansible-grr`
-* Source files are in source-grr
+* Demo deployment instructions in `ansible-grr` (automatic)
+  * Follow instructions in `ansible-grr/README.md`
+* Source files are in source-grr (manual)
   * To run `docker-compose up -d`
   * Download client from web ui and install manually on host
 
