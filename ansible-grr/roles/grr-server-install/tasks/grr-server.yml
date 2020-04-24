@@ -8,5 +8,9 @@
 
 - name: Start GRR Server
   docker_compose:
-    project_src: '{{grr_location}}/grr'
+    project_src: "{{grr_location}}/grr"
     state: present
+  register: output
+
+- debug:
+    var: output
