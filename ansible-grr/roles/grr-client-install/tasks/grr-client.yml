@@ -1,7 +1,7 @@
 ---
 - name: Download grr-client from grr-server
   get_url: 
-    url: http://localhost/api/config/binaries-blobs/EXECUTABLE/linux/installers/grr_3.4.0.8_amd64.deb
+    url: http://localhost:8000/api/config/binaries-blobs/EXECUTABLE/linux/installers/grr_3.4.0.8_amd64.deb
     dest: /tmp/grr_amd64.deb
     username: admin
     password: password
