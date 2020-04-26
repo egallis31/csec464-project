@@ -12,6 +12,7 @@
 * Source files are in source-grr (manual)
   * To run `docker-compose up -d`
   * Download client from web ui and install manually on host
+* Uninstall - `uninstall.sh`
 
 ## Usage
 
